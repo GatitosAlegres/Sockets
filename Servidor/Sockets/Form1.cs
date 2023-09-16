@@ -51,6 +51,15 @@ namespace Sockets
             );
 
             MessageBox.Show("Socket Server: " + IPLiteral + " " + Dns.GetHostName().ToString());
+
+            try
+            {
+                ServerSocket.Bind(LocalPoint);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("FATAL ERROR: "+Ex.Message);
+            }
         }
     }
 }
