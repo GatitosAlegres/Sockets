@@ -55,6 +55,12 @@ namespace Sockets
             try
             {
                 ServerSocket.Bind(LocalPoint);
+
+                ServerSocket.Listen(5); // maximum number of connections allowed
+
+                Socket ChildrenSocket = ServerSocket.Accept();
+
+                MessageBox.Show("Connection has been accepted "+ ChildrenSocket.RemoteEndPoint.ToString());
             }
             catch (Exception Ex)
             {
