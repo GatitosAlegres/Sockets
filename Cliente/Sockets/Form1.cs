@@ -58,6 +58,8 @@ namespace Sockets
             try
             {
                 ClientSocket.Connect(IPRemotePoint);
+
+                MessageBox.Show("Connection has been accept");
             }
             catch (Exception Ex)
             {
