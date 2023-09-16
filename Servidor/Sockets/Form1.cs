@@ -42,7 +42,10 @@ namespace Sockets
 
             LocalIP = IPAddress.Parse(IPLiteral);
 
-            LocalPoint = new IPEndPoint(LocalIP, 1300);
+            LocalPoint = new IPEndPoint(
+                address: LocalIP, 
+                port: 1300
+            );
 
             ServerSocket = new Socket(
                 addressFamily: AddressFamily.InterNetwork,
