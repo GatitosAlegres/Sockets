@@ -16,6 +16,8 @@ namespace Sockets
     {
 
         IPHostEntry NeighboringHost;
+        IPEndPoint IPRemotePoint;
+        Socket ClientSocket;
 
         public Form1()
         {
@@ -41,6 +43,27 @@ namespace Sockets
             String LiteralHostName = NeighboringHost.HostName;
 
             txtHostName.Text = LiteralHostName;
+
+            IPRemotePoint = new IPEndPoint(
+                address: IPAddress, 
+                port: 1300
+            );
+
+            ClientSocket = new Socket(
+                addressFamily: AddressFamily.InterNetwork, 
+                socketType: SocketType.Stream, 
+                protocolType: ProtocolType.TCP
+            );
+
+            try
+            {
+                ClientSocket.Connect(IPRemotePoint);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Connection Error: " + Ex.Message);
+            }
+            
         }
     }
 }

@@ -12,10 +12,14 @@ using System.Net.Sockets;
 
 namespace Sockets
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form // SERVER
     {
 
-        IPHostEntry NeighboringHost;
+        IPHostEntry LocalHost;
+        IPEndPoint LocalPoint;
+        Socket ServerSocket;
+        IPAddress LocalIP;
+
 
         public Form1()
         {
@@ -32,15 +36,21 @@ namespace Sockets
             //string HostName = Dns.GetHostName();
             //txtHostName.Text = HostName;
 
-            String IPLiteral = txtNeighboringIP.Text.Trim();
+            LocalHost = Dns.GetHostEntry(Dns.GetHostName());
 
-            IPAddress IPAddress = IPAddress.Parse(IPLiteral);
+            String IPLiteral = LocalHost.AddressList[1].ToString();
 
-            NeighboringHost = Dns.GetHostEntry(IPAddress);
+            LocalIP = IPAddress.Parse(IPLiteral);
 
-            String LiteralHostName = NeighboringHost.HostName;
+            LocalPoint = new IPEndPoint(LocalIP, 1300);
 
-            txtHostName.Text = LiteralHostName;
+            ServerSocket = new Socket(
+                addressFamily: AddressFamily.InterNetwork,
+                socketType: SocketType.Stream,
+                protocolType: ProtocolType.Tcp
+            );
+
+            MessageBox.Show("Socket Server: " + IPLiteral + " " + Dns.GetHostName().ToString());
         }
     }
 }

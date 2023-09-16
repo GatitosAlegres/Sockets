@@ -19,3 +19,9 @@ E:\Redes y comunicaciones II\sockets\Sockets\Sockets\obj\Debug\Sockets.csproj.Ge
 E:\Redes y comunicaciones II\sockets\Servidor\Sockets\bin\Debug\Sockets.exe.config
 E:\Redes y comunicaciones II\sockets\Servidor\Sockets\obj\Debug\Sockets.exe
 E:\Redes y comunicaciones II\sockets\Servidor\Sockets\obj\Debug\Sockets.pdb
+E:\Redes y comunicaciones II\sockets\Servidor\Sockets\bin\Debug\Sockets.exe
+E:\Redes y comunicaciones II\sockets\Servidor\Sockets\bin\Debug\Sockets.pdb
+E:\Redes y comunicaciones II\sockets\Servidor\Sockets\obj\Debug\Sockets.csprojResolveAssemblyReference.cache
+E:\Redes y comunicaciones II\sockets\Servidor\Sockets\obj\Debug\Sockets.Form1.resources
+E:\Redes y comunicaciones II\sockets\Servidor\Sockets\obj\Debug\Sockets.Properties.Resources.resources
+E:\Redes y comunicaciones II\sockets\Servidor\Sockets\obj\Debug\Sockets.csproj.GenerateResource.Cache
